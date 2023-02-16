@@ -72,7 +72,7 @@ class FlightData:
 
             # if the flight ticket found is lower than the lowest price that we define in spreadsheet, then send email.
             if int(lowest_price) > cheapest:
-                self.send_email(EMAIL_TO, 'Low Price Alert!', f'Only {cheapest} with {its_duration} flight duration to fly to {city_name} from Yogyakarta! in {DATE_TO_CHECK}')
+                self.send_email(EMAIL_TO, 'Low Price Alert!', f'Only {cheapest} with {its_duration} flight duration to fly to {city_name} from {ORIGIN}! in {DATE_TO_CHECK}')
 
         # write the newest price to the "get price" column in spreadsheet
         for i in range(0, len(new_prices)):

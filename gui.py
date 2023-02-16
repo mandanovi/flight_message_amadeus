@@ -85,7 +85,7 @@ class FlightReader(QWidget):
         print(origin_code)
         print(selected_date)
         flight = FlightData()
-        flight.get_lowest_price_for_specific_date(selected_date, 'YIA')
+        flight.get_lowest_price_for_specific_date(selected_date, origin_code)
         self.table.setRowCount(2)
         updated = QTableWidgetItem("Price found has been updated to spreadsheet")
         sendtomail = QTableWidgetItem("and lower flight price has been sent to e-mail")
