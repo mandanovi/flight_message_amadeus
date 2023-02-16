@@ -13,6 +13,7 @@ class Sheety:
             'Content-Type': 'application/json'
         }
         self.result = {}
+        print("sheety init is called")
 
     def write_to_sheety(self, column, value, row):
         put_url = f'https://api.sheety.co/f23e01c6269912b80714f7f1d400ec9d/flightMessage/sheet1/{row}'
@@ -23,6 +24,7 @@ class Sheety:
         }
         response = requests.put(put_url, headers=self.headers, json=data)
         if response.status_code == 200:
+            print("write sheety is working")
             self.result = response.json()
             return self.result
         else:
@@ -31,6 +33,7 @@ class Sheety:
     def read_sheety(self):
         response = requests.get(url=self.SHEETY_URL, headers=self.headers)
         if response.status_code == 200:
+            print("read sheety is working")
             self.result = response.json()
             return self.result
         else:
